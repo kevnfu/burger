@@ -6,5 +6,7 @@ User can consume a burger by clicking the "devour" button. User can add a burger
 
 ## Api
 GET `/api/burgers` returns json of all the burgers.
+
 POST `/api/burgers` creates a new burger with `{"name": name}`
+
 PUT `/api/burgers` eats a burger with `{"id": id}`
