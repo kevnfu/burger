@@ -7,13 +7,17 @@ const COLUMNS = [
     'devoured', 
 ];
 
-let conn = mysql.createConnection({
-  host: 'localhost',
-  port: 3306,
-  user: 'root',
-  password: 'test',
-  database: 'burgers_db'
-});
+if(process.env.JAWSDB_URL) {
+  let conn = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  let conn = mysql.createConnection({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: 'test',
+    database: 'burgers_db'
+  });
+}
 
 conn.connect(function(err) {
   if (err) {
